@@ -1,0 +1,21 @@
+<section style="background-color: lightblue;">
+  <p>binding por evento</p>
+
+  <p>binding desde evento (click) del boton:</p>
+  <button type="button" (click)="Incrementar()">en (click)="Incrementar()"</button>
+  <!-- <p >{{valor}}</p> a valor le tomaba 2 clicks para cambiar-->
+  <p>{{resultado}}</p>
+
+  <hr>
+  <p>lo mismo pero usando una expresion, sin el metodo incrementar()</p>
+
+  <button type="button" (click)="valor = valor+1">Un botón que en (click)="valor = valor+1"</button>
+  <p>{{valor}}</p>
+
+  <hr>
+  <p>binding mediante objeto $event</p>
+  <input type="text" (input)="Generar($event)">
+
+  <p>{{mensaje}}</p>
+
+</section>

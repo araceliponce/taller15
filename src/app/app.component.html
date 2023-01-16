@@ -1,0 +1,61 @@
+<section class="container mt-5">
+  <section class="row">
+
+    <section class="col-12 col-md-6">
+      <p class="text-center text-info">Actividad asíncrona</p>
+      <h1 class="text-center" [ngStyle]="{'color':'white','background-color':'#66cdaa'}" class="text-center">{{ titulo }}</h1>
+
+      <p *ngIf="mostrar">Event Binding, es el mecanismo de data binding mediante el cual trabaja con los eventos que se encuentra en el DOM.</p>
+      <section class="text-center mb-3">
+        <input class="btn btn-warning" type="button" value={{valor}} (click)="Generar()">
+      </section>
+
+      <!-- SE MUESTRA EL CONTENIDO DE LA VARIABLE CON (Interpolacion) -->
+      <h3 class="text-center" [ngStyle]="{'color':'white','background-color':'#191970'}">Two way binding</h3>
+      <section class="col">
+        <h4>Por Interpolacion desde HTML</h4>
+        <textarea class="form-control" name="twoWay" id="twoWay" rows="7">{{ twoWay }}</textarea>
+      </section>
+
+      <!-- SE MUESTRA EL CONTENIDO DE LA VARIABLE CON (ngModel) -->
+      <section class="col">
+        <h4>Por la directiva ngModel <small>(editar aquí)</small></h4>
+        <textarea class="form-control" [(ngModel)]="twoWay" name="twoWay" id="twoWay" rows="7" (focus)="Print()"></textarea>
+      </section>
+    </section>
+
+    <section class="col-12 col-md-6">
+      <app-form></app-form>
+    </section>
+  </section>
+</section>
+
+
+
+
+<!-- <style>
+  body {
+    background-image: url("../../../assets/20886.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100vh
+  }
+
+  html {
+    background-color: rgb(89, 95, 94);
+    height: 100vh;
+  }
+</style> -->
+
+
+
+<section style="display:none;">
+  <app-interpolacion></app-interpolacion>
+  <app-evento></app-evento>
+  <app-twoway></app-twoway>
+
+
+  modulo
+  - evento
+  - interpolacion
+  - twoway
+</section>

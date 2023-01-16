@@ -1,0 +1,86 @@
+<section class=" d-none container bg-light">
+  <h1 class="color fs-1 text-center">Registro de datos</h1>
+  <form class="form-group">
+    <input autofocus type="text" class="form-control" placeholder="Nombres" name="nombre" [(ngModel)]="nom">
+    <input type="text" class="form-control" placeholder="Apellidos" name="apellido" [(ngModel)]="ape">
+    <input type="text" class="form-control" placeholder="Carrera" name="carrera" [(ngModel)]="car">
+    <input type="button" value="Enviar" (click)="Agregar()">
+  </form>
+</section>
+
+<section class=" d-none container bg-light">
+  <!--  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nro</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Carrera</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fila of datos; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{fila.Nombre}}</td>
+        <td>{{fila.Apellido}}</td>
+        <td>{{fila.Carrera}}</td>
+        <td>
+          <button class="btn btn-danger" value={{i}} (click)="Eliminar(i)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table> -->
+
+</section>
+
+
+<p class="text-info text-center">Reto</p>
+<h2 class="text-center">Formulario de Registro</h2>
+<form class="border p-1 mt-1">
+
+  <section class="form-group m-3">
+    <label class="col-sm-2 col-form-label" for="nombre">Nombre:</label>
+    <input class="form-control" type="text" id="nombre" [(ngModel)]="nombre" name="nombre">
+  </section>
+
+  <section class="form-group m-3">
+    <label class="col-sm-2 col-form-label" for="apellido">Apellido:</label>
+    <input class="form-control " type="text" id="apellido" [(ngModel)]="apellido" name="apellidos">
+  </section>
+  <section class="form-group m-3">
+    <label class="col-sm-2 col-form-label" for="carrera">Carrera:</label>
+    <input class="form-control" type="text" id="carrera" [(ngModel)]="carrera" name="carrera">
+  </section>
+  <section class="form-group text-center m-3">
+    <button type="button" class="btn btn-outline-dark" (click)="insertarDatos()">Guardar</button>
+  </section>
+</form>
+
+<section class="form-group m-0 mt-3 text-center">
+  <section class="d-block">
+  </section>
+  <section class="d-block">
+    <table class="table table-striped border rounded  ">
+
+      <thead>
+        <tr>
+          <th class="text-center">Nombre</th>
+          <th class="text-center">Apellidos</th>
+          <th class="text-center">Carrera</th>
+          <th class="text-center">#</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let estudiante of estudiante; let i = index">
+          <td class="text-center">{{estudiante.nombre}}</td>
+          <td class="text-center">{{estudiante.apellidos}}</td>
+          <td class="text-center">{{estudiante.carrera}}</td>
+          <td class="d-flex justify-content-center">
+            <button type="button" class="btn btn-danger" (click)="eliminarEstudiante(i)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <section class="d-flex justify-content-center text-center" id="alert-container"></section>
+  </section>
